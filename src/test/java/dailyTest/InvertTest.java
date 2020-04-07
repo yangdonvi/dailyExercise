@@ -30,9 +30,11 @@ public class InvertTest {
      */
 
     TreeNode treeNode1 = new TreeNode(4);
+    TreeNode treeNode2 = new TreeNode(5);
+    TreeNode treeNode3 = new TreeNode(6);
     TreeNode treeNode4 = new TreeNode(7);
-    TreeNode treeNode5 = new TreeNode(2, treeNode1, null);
-    TreeNode treeNode6 = new TreeNode(3, null, treeNode4);
+    TreeNode treeNode5 = new TreeNode(2, treeNode1, treeNode2);
+    TreeNode treeNode6 = new TreeNode(3, treeNode3, treeNode4);
     TreeNode treeNode7 = new TreeNode(1, treeNode5, treeNode6);
 
     @Test
