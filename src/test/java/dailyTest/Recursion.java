@@ -6,7 +6,7 @@ package dailyTest;
  * @CreateDate: 2020/1/19
  * @Version: 1.0
  */
-public class recursion {
+public class Recursion {
     public static void main(String[] args) {
         System.out.println(multipy(10));
     }
