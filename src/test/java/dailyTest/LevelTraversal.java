@@ -16,6 +16,8 @@ public class LevelTraversal {
         queue.offer(treeNode);
         TreeNode curLast = treeNode;
         TreeNode nextLast = null;
+        int index = 1;
+        System.out.print("第"+index+"行：");
 
         while (!queue.isEmpty()){
             currentNode = queue.poll();
@@ -28,8 +30,9 @@ public class LevelTraversal {
                 queue.offer(currentNode.getRight());
                 nextLast = currentNode.getRight();
             }
-            if (curLast.equals(currentNode)){
+            if (curLast.equals(currentNode) && !queue.isEmpty()){
                 System.out.println();
+                System.out.print("第"+ ++index +"行：");
                 curLast = nextLast;
             }
         }
