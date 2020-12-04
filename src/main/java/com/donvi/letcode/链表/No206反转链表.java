@@ -1,4 +1,4 @@
-package com.donvi.letcode.数组;
+package com.donvi.letcode.链表;
 
 public class No206反转链表 {
 
