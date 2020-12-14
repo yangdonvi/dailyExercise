@@ -13,7 +13,7 @@ public class ProducerAndConsumerByBlockingQueue {
      */
     private BlockingDeque<Integer> productPool = new LinkedBlockingDeque<>(10);
 
-    class Producer extends Thread {
+    class Producer implements Runnable {
         @Override
         public void run() {
             produce();
@@ -36,7 +36,7 @@ public class ProducerAndConsumerByBlockingQueue {
         }
     }
 
-    class Consumer extends Thread {
+    class Consumer implements Runnable {
         @Override
         public void run() {
             consume();
@@ -63,8 +63,8 @@ public class ProducerAndConsumerByBlockingQueue {
         ProducerAndConsumerByBlockingQueue testQueue = new ProducerAndConsumerByBlockingQueue();
         Producer producer = testQueue.new Producer();
         Consumer consumer = testQueue.new Consumer();
-        producer.start();
-        consumer.start();
+        new Thread(producer).start();
+        new Thread(consumer).start();
     }
 
 
