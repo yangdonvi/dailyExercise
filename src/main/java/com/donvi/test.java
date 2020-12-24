@@ -1,24 +1,26 @@
 package com.donvi;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 public class test {
 
+    class TreeNode{
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.forEach(i -> {
-            if (i == 2){
-                return;
-            }
-            System.out.println(i);
-        });
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
+    public static void afterTravel(TreeNode treeNode){
+        if (treeNode == null){
+            return;
+        }
+        afterTravel(treeNode.left);
+        afterTravel(treeNode.right);
+        System.out.println(treeNode.val);
 
     }
 
