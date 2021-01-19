@@ -1,10 +1,13 @@
 package com.donvi.entity;
 
 
+import lombok.Data;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -13,6 +16,7 @@ import java.util.List;
  * @CreateDate: 2019/10/19
  * @Version: 1.0
  */
+@Data
 public class Book {
 
     private long id;
@@ -29,54 +33,13 @@ public class Book {
     @NotEmpty(message = "authors集合不能为空")
     private List<String> authors;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
+    public Book(long id, @NotEmpty(message = "bookName不能为空") String bookName) {
         this.id = id;
-    }
-
-    public String getBookName() {
-        return bookName;
-    }
-
-    public void setBookName(String bookName) {
         this.bookName = bookName;
     }
 
-    public String getBookIsbn() {
-        return bookIsbn;
+    public Book() {
     }
 
-    public void setBookIsbn(String bookIsbn) {
-        this.bookIsbn = bookIsbn;
-    }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public List<String> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", bookName='" + bookName + '\'' +
-                ", bookIsbn='" + bookIsbn + '\'' +
-                ", price=" + price +
-                ", authors=" + authors +
-                '}';
-    }
 }

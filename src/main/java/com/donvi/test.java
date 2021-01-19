@@ -1,29 +1,22 @@
 package com.donvi;
 
+import com.donvi.entity.Book;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class test {
 
-    class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
+    public static void main(String[] args) {
 
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+
+        Book book1 = new Book(1L, "book1");
+        Book book2 = new Book(1L, "book1");
+        Set<Book> set = new HashSet<>();
+        set.add(book1);
+        set.add(book2);
+        System.out.printf(String.valueOf(set.size()));
+        System.out.println(book1.toString());
     }
-
-    public static void afterTravel(TreeNode treeNode){
-        if (treeNode == null){
-            return;
-        }
-        afterTravel(treeNode.left);
-        afterTravel(treeNode.right);
-        System.out.println(treeNode.val);
-
-    }
-
-
 
 }
